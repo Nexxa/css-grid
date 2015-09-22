@@ -1,0 +1,22 @@
+// Grid - variables
+
+// Commons
+@grid-row-spacing: 1%;
+@grid-col-number : 12;
+@grid-middle     : (@grid-col-number / 2);
+
+// Large display
+@grid-col-l-gutter: 20px;
+@grid-col-l-width : 60px;
+
+// Medium display
+@grid-col-m-gutter: 10px;
+@grid-col-m-width : round((768 - (@grid-col-m-gutter * @grid-col-number)) / @grid-col-number);
+
+// Small display
+@grid-col-s-gutter: 2%;
+@grid-col-s-width : (100% - (@grid-col-s-gutter * (@grid-col-number - 1))) / @grid-col-number;
+
+// Fluid
+@grid-col-fluid-gutter: 1.6%;
+@grid-col-fluid-width : (100% - (@grid-col-fluid-gutter * (@grid-col-number - 1))) / @grid-col-number;

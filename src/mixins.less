@@ -1,0 +1,144 @@
+// Grid - mixins
+
+// ---
+// Gets the grid total width.
+// ---
+.grid-width(@type) when (@type = xs), (@type = s), (@type = fluid) {
+  width: 100%;
+}
+
+.grid-width(@type) when (default()) {
+  @grid-col-width-ref : "grid-col-@{type}-width";
+  @grid-col-gutter-ref: "grid-col-@{type}-gutter";
+  
+  width: (@@grid-col-width-ref * @grid-col-number) + (@@grid-col-gutter-ref * @grid-col-number);
+}
+
+// ---
+// Sets the column width.
+// ---
+.grid-column-width(@type) when (@type = s) {
+  // Set to 50/50 as it were fluid
+  width: (@grid-col-s-width * @grid-middle) + (@grid-col-s-gutter * (@grid-middle - 1));
+}
+
+.grid-column-width(@type, @i) when not (@type = s) {
+  @grid-col-width-ref : "grid-col-@{type}-width";
+  @grid-col-gutter-ref: "grid-col-@{type}-gutter";
+  
+  width: (@@grid-col-width-ref * @i) + (@@grid-col-gutter-ref * (@i - 1));
+}
+
+// ---
+// Sets the column offset.
+// ---
+.grid-column-offset(@type, @i) when not (@type = s) {
+  @grid-col-width-ref : "grid-col-@{type}-width";
+  @grid-col-gutter-ref: "grid-col-@{type}-gutter";
+  
+  margin-left: (@@grid-col-width-ref * @i) + (@@grid-col-gutter-ref * @i);
+}
+
+// ---
+// Sets gutter (margin or padding).
+// ---
+.grid-column-gutter(@type) when (@type = m), (@type = l) {
+  @grid-col-gutter-ref: "grid-col-@{type}-gutter";
+  
+  margin: 0 (@@grid-col-gutter-ref / 2);
+}
+
+.grid-column-gutter(@type) when (@type = fluid), (@type = s) {
+  @grid-col-gutter-ref: "grid-col-@{type}-gutter";
+  
+  margin: 0 0 0 @@grid-col-gutter-ref;
+}
+
+// ---
+// Generates a single column style.
+// ---
+.grid-column-span(@type, @i) {
+  .col.span-@{i} {
+    .grid-column-width(@type, @i)
+  }
+  
+  .col.offset-@{i} {
+    .grid-column-offset(@type, @i)
+  }
+}
+
+// ---
+// Sets common stiles for columns.
+// ---
+.grid-column-commons(@type) {
+  .col {
+    float: left;
+    
+    .grid-column-gutter(@type)
+  }
+}
+
+.grid-column-commons(@type) when (@type = fluid) {
+  .col:first-child {
+    margin-left: 0;
+  }
+}
+
+// ---
+// Generates recursively the columns by type.
+// ---
+
+// Fluid, tablet and desktop
+.grid-columns(@type) when not (@type = xs) and not (@type = s) {
+  // Commons
+  .grid-column-commons(@type);
+  
+  // Single column
+  .grid-column(@type, @i: 1) {
+    .grid-column-span(@type, @i);
+  }
+  
+  // Loop
+  .grid-column(@type, @i: 1) when (@i < @grid-col-number) {
+    .grid-column(@type, (@i + 1));
+  }
+  
+  // Kickstart
+  .grid-column(@type);
+}
+
+// Extra small, smartphone portrait
+.grid-columns(@type) when (@type = xs) {
+  // Commons
+  .col {
+    width: 100%;
+  }
+}
+
+// Small, smartphone landscape
+.grid-columns(@type) when (@type = s) {
+  // Commons
+  .col {
+    &.span-50_100 {
+      float: left;
+      .grid-column-width(@type);
+      .grid-column-gutter(@type);
+    }
+    
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  
+  // Single column
+  .grid-column(@i: 1) when (@i =< @grid-middle) {
+    .col.span-@{i} {
+      &:extend(.col.span-50_100);
+    }
+    
+    .grid-column((@i + 1));
+  }
+  
+  // Kickstart
+  .grid-column();
+}

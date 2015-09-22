@@ -1,0 +1,65 @@
+// Grid - grid system
+
+// Imports
+@import "vars";
+@import "mixins";
+
+// Container
+.container {
+  margin: 0 auto;
+  
+  .grid-width(xs);
+  
+  @media only screen and (min-width: 768px) {
+    .grid-width(m);
+  }
+  
+  @media only screen and (min-width: 992px) {
+    .grid-width(l);
+  }
+}
+
+// Rows
+.row,
+.row-fluid {
+  display: block;
+  position: relative;
+  margin: @grid-row-spacing 0;
+  zoom: 1; // IE 6/7
+  
+  &:before,
+  &:after {
+    content: ".";
+    visibility: hidden;
+    display: table;
+    font-size: 0;
+    line-height: 0;
+  }
+  
+  &:after {
+    clear: both;
+  }
+}
+
+// XtraSmall columns
+.grid-columns(xs);
+
+// Small columns
+@media only screen and (min-width: 480px) {
+  .grid-columns(s);
+}
+
+// Medium columns
+@media only screen and (min-width: 768px) {
+  .grid-columns(m);
+  
+  // Fluid layout
+  .row-fluid {
+    .grid-columns(fluid);
+  }
+}
+
+// Large columns
+@media only screen and (min-width: 992px) {
+  .grid-columns(l);
+}
