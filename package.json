@@ -1,0 +1,26 @@
+{
+  "name": "css-grid",
+  "version": "0.1.0",
+  "description": "CSS Grid system - based on 960 Grid System",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nexxa/css-grid.git"
+  },
+  "keywords": [
+    "nexxa",
+    "css",
+    "grid",
+    "system",
+    "960",
+    "less"
+  ],
+  "author": "Nexxa <nexxa.developers@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nexxa/css-grid/issues"
+  },
+  "homepage": "https://github.com/Nexxa/css-grid#readme"
+}
