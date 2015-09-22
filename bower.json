@@ -1,0 +1,30 @@
+{
+  "name": "css-grid",
+  "version": "0.1.0",
+  "homepage": "https://github.com/Nexxa/css-grid",
+  "authors": [
+    "Nexxa <nexxa.developers@gmail.com>"
+  ],
+  "description": "CSS Responsive Grid System - based on 960 Grid System",
+  "main": [
+    "dist/grid-min.css",
+    "src/grid.less"
+  ],
+  "keywords": [
+    "nexxa",
+    "css",
+    "grid",
+    "system",
+    "960",
+    "responsive",
+    "less"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

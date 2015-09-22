@@ -1,7 +1,7 @@
 {
   "name": "css-grid",
   "version": "0.1.0",
-  "description": "CSS Grid system - based on 960 Grid System",
+  "description": "CSS Responsive Grid System - based on 960 Grid System",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,5 +22,9 @@
   "bugs": {
     "url": "https://github.com/Nexxa/css-grid/issues"
   },
-  "homepage": "https://github.com/Nexxa/css-grid#readme"
+  "homepage": "https://github.com/Nexxa/css-grid#readme",
+  "devDependencies": {
+    "bower": "^1.5.2",
+    "gulp": "^3.9.0"
+  }
 }
