@@ -128,9 +128,11 @@ Furthermore, you can use `.row-fluid` css class in order to have a fluid layout.
 
 Track an issue or send a pull request: [https://github.com/Nexxa/css-grid/issues](https://github.com/Nexxa/css-grid/issues).
 
-Run `gulp` for simple build.
+Run `gulp` or `gulp build` for simple build.
 
 Run `gulp release` to prepare a release.
+
+Run `gulp watch` to watch *LESS* files when edit.
 
 ## Resources
 
