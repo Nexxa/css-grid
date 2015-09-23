@@ -36,7 +36,7 @@
 .col {
   width: 100%;
 }
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 480px) and (max-width: 767px) {
   .col.span-50_100,
   .col.span-1,
   .col.span-2,
