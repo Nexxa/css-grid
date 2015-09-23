@@ -48,7 +48,17 @@
     width: 49%;
     margin: 0 0 0 2%;
   }
-  .col:first-child {
+  .col.span-100_100,
+  .col.span-7,
+  .col.span-8,
+  .col.span-9,
+  .col.span-10,
+  .col.span-11,
+  .col.span-12 {
+    clear: both;
+  }
+  .col:nth-child(odd) {
+    clear: both;
     margin-left: 0;
   }
 }

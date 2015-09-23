@@ -125,7 +125,13 @@
       .grid-column-gutter(@type);
     }
     
-    &:first-child {
+    &.span-100_100 {
+      clear: both;
+    }
+    
+    //&:first-child {
+    &:nth-child(odd) {
+      clear: both;
       margin-left: 0;
     }
   }
@@ -135,7 +141,15 @@
     .col.span-@{i} {
       &:extend(.col.span-50_100);
     }
-    
+  }
+  
+  .grid-column(@i: 1) when (@i > @grid-middle) {
+    .col.span-@{i} {
+      &:extend(.col.span-100_100);
+    }
+  }
+  
+  .grid-column(@i: 1) when (@i < @grid-col-number) {
     .grid-column((@i + 1));
   }
   

@@ -1,6 +1,6 @@
 {
   "name": "css-grid",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "CSS Responsive Grid System - based on 960 Grid System",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
