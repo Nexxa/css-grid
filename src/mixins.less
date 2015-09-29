@@ -45,13 +45,13 @@
 .grid-column-gutter(@type) when (@type = m), (@type = l) {
   @grid-col-gutter-ref: "grid-col-@{type}-gutter";
   
-  margin: 0 (@@grid-col-gutter-ref / 2);
+  padding: 0 (@@grid-col-gutter-ref / 2);
 }
 
 .grid-column-gutter(@type) when (@type = fluid), (@type = s) {
   @grid-col-gutter-ref: "grid-col-@{type}-gutter";
   
-  margin: 0 0 0 @@grid-col-gutter-ref;
+  padding: 0 0 0 @@grid-col-gutter-ref;
 }
 
 // ---
@@ -80,7 +80,7 @@
 
 .grid-column-commons(@type) when (@type = fluid) {
   .col:first-child {
-    margin-left: 0;
+    padding-left: 0;
   }
 }
 
@@ -132,7 +132,7 @@
     //&:first-child {
     &:nth-child(odd) {
       clear: both;
-      margin-left: 0;
+      padding-left: 0;
     }
   }
   

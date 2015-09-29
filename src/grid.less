@@ -10,11 +10,11 @@
   
   .grid-width(xs);
   
-  @media only screen and (min-width: 768px) {
+  @media @grid-mq-m {
     .grid-width(m);
   }
   
-  @media only screen and (min-width: 992px) {
+  @media @grid-mq-l {
     .grid-width(l);
   }
 }
@@ -45,12 +45,12 @@
 .grid-columns(xs);
 
 // Small columns
-@media only screen and (min-width: 480px) and (max-width: 767px) {
+@media @grid-mq-s {
   .grid-columns(s);
 }
 
 // Medium columns
-@media only screen and (min-width: 768px) {
+@media @grid-mq-m {
   .grid-columns(m);
   
   // Fluid layout
@@ -60,6 +60,6 @@
 }
 
 // Large columns
-@media only screen and (min-width: 992px) {
+@media @grid-mq-l {
   .grid-columns(l);
 }

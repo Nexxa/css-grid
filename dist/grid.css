@@ -46,7 +46,7 @@
   .col.span-6 {
     float: left;
     width: 49%;
-    margin: 0 0 0 2%;
+    padding: 0 0 0 2%;
   }
   .col.span-100_100,
   .col.span-7,
@@ -59,13 +59,13 @@
   }
   .col:nth-child(odd) {
     clear: both;
-    margin-left: 0;
+    padding-left: 0;
   }
 }
 @media only screen and (min-width: 768px) {
   .col {
     float: left;
-    margin: 0 5px;
+    padding: 0 5px;
   }
   .col.span-1 {
     width: 54px;
@@ -141,10 +141,10 @@
   }
   .row-fluid .col {
     float: left;
-    margin: 0 0 0 1.6%;
+    padding: 0 0 0 1.6%;
   }
   .row-fluid .col:first-child {
-    margin-left: 0;
+    padding-left: 0;
   }
   .row-fluid .col.span-1 {
     width: 6.86666667%;
@@ -222,7 +222,7 @@
 @media only screen and (min-width: 992px) {
   .col {
     float: left;
-    margin: 0 10px;
+    padding: 0 10px;
   }
   .col.span-1 {
     width: 60px;
